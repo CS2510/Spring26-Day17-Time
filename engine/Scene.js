@@ -68,8 +68,7 @@ class Scene {
             const union = [...new Set([...thisFrameMouseCollisions, ...this.lastFrameMouseCollisions])]
             for(const collidable of union){
                 collidable.broadcastMessage("onMouseDrag")
-                if(this.lastFrameMouseCollisions.includes(collidable)
-                     && !thisFrameMouseCollisions.includes(collidable)){
+                if(this.lastFrameMouseCollisions.includes(collidable) && !thisFrameMouseCollisions.includes(collidable)){
                     thisFrameMouseCollisions.push(collidable)
                 }
             }
